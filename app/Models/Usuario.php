@@ -11,12 +11,6 @@ class Usuario extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
     public function configuracion()
     {
         return $this->hasOne(Configuracion::class);

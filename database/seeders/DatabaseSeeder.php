@@ -2,17 +2,20 @@
 
 namespace Database\Seeders;
 
+use App\Models\Configuracion;
+use App\Models\Rol;
+use App\Models\Usuario;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        Configuracion::factory()->count(50)->create();
+        Usuario::factory()->count(50)->hasConfiguracion(1)->create();
+        Rol::factory()->count(10)->create();
+
     }
 }
